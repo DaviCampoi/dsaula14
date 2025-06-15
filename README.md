@@ -21,25 +21,53 @@ Este projeto é um comando de terminal (`Command`) desenvolvido em Node.js que c
 
 ##  Estrutura de Pastas
 
-.
-├── app/
-│ ├── Commands/
-│ │ └── GetAlunosCommand.js
-│ ├── Models/
-│ │ ├── Aluno.js
-│ │ ├── Materia.js
-│ │ ├── AlunoMateria.js
-│ │ └── User.js
+├── .dockerignore
+├── .env.example
+├── .gitignore
 ├── command
-├── config/
-│ └── sequelize_relations.js
-├── database/
-│ ├── migrations/
-│ └── seeds/
-├── .env
+├── docker-compose.yml
+├── Insomnia.yaml
+├── package-lock.json
 ├── package.json
-└── README.md
-
+├── readme.md
+├── server.js
+│
+├── app/
+│   ├── Commands/
+│   │   └── GetAlunosCommand.js
+│   │
+│   ├── Controllers/
+│   │   └── AuthController.js
+│   │   └── AlunosController.js
+│   │
+│   ├── Middlewares/
+│   │   └── auth.js
+│   │
+│   ├── Models/
+│   │   ├── Aluno.js
+│   │   ├── Materia.js
+│   │   ├── AlunoMateria.js
+│   │   └── User.js
+│
+├── config/
+│   ├── database.js
+│   └── sequelize_relations.js
+│
+├── database/
+│   ├── migrations/
+│   │   └── xxxx-create-users.js
+│   │   └── xxxx-create-alunos.js
+│   │   └── xxxx-create-materias.js
+│   │   └── xxxx-create-alunos-materias.js
+│   │
+│   └── seeds/
+│       └── xxxx-users.js
+│       └── xxxx-alunos.js
+│       └── xxxx-materias.js
+│       └── xxxx-alunos-materias.js
+│
+└── swagger/
+    └── swagger_output.json
 
 ## Como executar
 
