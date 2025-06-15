@@ -8,7 +8,7 @@ Este projeto é um comando de terminal (`Command`) desenvolvido em Node.js que c
 - Fazer login na rota `POST /login` e utilizar o token JWT retornado.
 - Listar todos os alunos (paginação limitada a 10 por requisição) com as matérias separadas por vírgula ou quebra de linha.
 - Exibir os dados em uma tabela no terminal com as colunas `Aluno` e `Matérias`.
-- Utilizar `cli-table3` para a exibição.
+- Utilizar cli-table3 para a exibição.
 
 ## ⚙Tecnologias Utilizadas
 
@@ -40,16 +40,13 @@ Este projeto é um comando de terminal (`Command`) desenvolvido em Node.js que c
 ├── package.json
 └── README.md
 
-perl
-Copiar
-Editar
 
 ## Como executar
 
 1. Clone o repositório (ou use sua versão criada do zero).
 2. Instale as dependências:
 
-```bash
+
 npm install
 Configure o .env com os dados do seu banco.
 
@@ -62,9 +59,6 @@ npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 Execute o comando:
 
-bash
-Copiar
-Editar
 node command
 # ou
 ./command
@@ -72,8 +66,7 @@ node command
 Resultado Esperado
 O terminal exibirá uma tabela como esta:
 
-Copiar
-Editar
+
 ┌────────────────────────────┬────────────────────────────────────────────────────┐
 │ Aluno                      │ Matérias                                           │
 ├────────────────────────────┼────────────────────────────────────────────────────┤
