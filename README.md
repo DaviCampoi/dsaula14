@@ -1,0 +1,83 @@
+# Sistema de Listagem de Alunos via CLI com Autenticação e Paginação
+
+Este projeto é um comando de terminal (`Command`) desenvolvido em Node.js que consome uma API REST autenticada, listando todos os alunos cadastrados e suas respectivas matérias. Os dados são exibidos em uma tabela formatada no terminal utilizando a biblioteca `cli-table3`.
+
+##  Objetivo da Atividade
+
+- Criar um comando executável no terminal que consuma a rota `GET /api/alunos` da API.
+- Fazer login na rota `POST /login` e utilizar o token JWT retornado.
+- Listar todos os alunos (paginação limitada a 10 por requisição) com as matérias separadas por vírgula ou quebra de linha.
+- Exibir os dados em uma tabela no terminal com as colunas `Aluno` e `Matérias`.
+- Utilizar `cli-table3` para a exibição.
+
+## ⚙Tecnologias Utilizadas
+
+- Node.js
+- Axios
+- CLI-Table3
+- Sequelize (ORM)
+- Express
+- JSON Web Token (JWT)
+
+##  Estrutura de Pastas
+
+.
+├── app/
+│ ├── Commands/
+│ │ └── GetAlunosCommand.js
+│ ├── Models/
+│ │ ├── Aluno.js
+│ │ ├── Materia.js
+│ │ ├── AlunoMateria.js
+│ │ └── User.js
+├── command
+├── config/
+│ └── sequelize_relations.js
+├── database/
+│ ├── migrations/
+│ └── seeds/
+├── .env
+├── package.json
+└── README.md
+
+perl
+Copiar
+Editar
+
+## Como executar
+
+1. Clone o repositório (ou use sua versão criada do zero).
+2. Instale as dependências:
+
+```bash
+npm install
+Configure o .env com os dados do seu banco.
+
+Rode as migrations e seeds:
+
+bash
+Copiar
+Editar
+npx sequelize-cli db:migrate
+npx sequelize-cli db:seed:all
+Execute o comando:
+
+bash
+Copiar
+Editar
+node command
+# ou
+./command
+
+Resultado Esperado
+O terminal exibirá uma tabela como esta:
+
+Copiar
+Editar
+┌────────────────────────────┬────────────────────────────────────────────────────┐
+│ Aluno                      │ Matérias                                           │
+├────────────────────────────┼────────────────────────────────────────────────────┤
+│ Aluno 1                    │ Português, Matemática, História, Geografia, Inglês│
+│ Aluno 2                    │ Português, Matemática, História, Geografia, Inglês│
+│ ...                        │ ...                                                │
+└────────────────────────────┴────────────────────────────────────────────────────┘
